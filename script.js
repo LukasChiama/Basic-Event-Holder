@@ -33,12 +33,10 @@ function storeEvent() {
   const buttonText1 = document.createTextNode('Edit Event')
   const buttonText2 = document.createTextNode('Delete Event')
 
-    listArr.appendChild(listMum)
     listButton1.appendChild(buttonText1)
     listButton2.appendChild(buttonText2)
-    listMum.appendChild(listButton1)
-    listMum.appendChild(listButton2)
     listArr.classList.add('btn-group')
+    listArr.appendChild(listMum)
     listButton1.onclick = editArr;
     listButton2.onclick = deleteArr;
   
@@ -48,7 +46,9 @@ function storeEvent() {
     li.innerHTML = `${key}: ${value}`
     listMum.appendChild(li)
   });
-
+    listMum.appendChild(listButton1)
+    listMum.appendChild(listButton2)
+    
   function deleteArr() {
     if (listArr.hasChildNodes()) {
       listArr.removeChild(listArr.childNodes[0])

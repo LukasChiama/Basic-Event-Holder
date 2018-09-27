@@ -2,48 +2,63 @@
 <html>
 <head lang ="en">
 	<title>Event Manager</title>
-	<meta charset ="utf-8">
+  <meta charset ="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
 </head>
-  <body>
-	  <section id="intro">
-        <h1>Romel<i>Events</i>.com</h1>
-	  </section>
-	  <section>
-        <p id="heading"><u>Upcoming Events</u></p>
-		</section>
-    <div>
-      <button id="add" onclick= "showDialog()">ADD NEW EVENT</button>
-    <div class="openform">
-        <div>
-          <label for="name">Event Name:</label>
-          <input type="text" id="name" name="eventName">
+<body>
+	<section id="intro">
+        <div class="topnav">
+            <a class="active" href=#home>Home</a>
+            <a href=#news>News</a>
+            <a href=#contact>Contact Us</a>
+            <a href=#about>About Us</a>
+          </div>
+        <h1>Romel<i>Events</i><span id="main-name">.com</span></h1>
+	</section>
+	<section>
+      <p id="heading"></p>
+      <p>YOUR DATABASE</p>
+      <div class="grid-hold">
+        <div class="menu">
+          <a id="add" onclick= "showDialog()">Add New Event</a>
+          <a id="saved">View Saved Events</a>
+          <a id="future">See Upcoming Events</a>
+          <a id="clients">Clients</a> 
         </div>
-        <div>
-          <label for="startDate">Start Date:</label>
-          <input type="date" id="startDate" name="start_Date">
+        <div class="openform">
+          <div>
+            <label for="name">Event Name:</label>
+            <input type="text" id="name" name="eventName">
+          </div>
+          <div>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="start_Date">
+          </div>
+          <div>
+            <label for="endDate">End Date:<label>
+            <input type="date" id="endDate" name="end_Date">
+          </div>
+          <div>
+            <label for="venue">Venue:</label>
+            <input type="text" id="venue" name="eventVenue">
+          </div>
+          <div>
+            <label for="price">Ticket Price (N):</label>
+            <input type="number" id="price" name="ticketPrice">
+          </div>
+          <div>
+            <label for="msg">Description<label>
+            <textarea id="msg" name="eventDescription"></textarea>
+          </div>
+          <div id="saveAndEdit" class="btn-group">
+            <button id="saveEvent" type="button" onclick="storeEvent()">Save Event</button>
+            <button type="reset">Reset Event</button>
+          </div>
         </div>
-        <div>
-          <label for="endDate">End Date:<label>
-          <input type="date" id="endDate" name="end_Date">
+        <div id="output">
+          <div id="event-list"><ol></ol></div>
         </div>
-        <div>
-          <label for="venue">Venue:</label>
-          <input type="text" id="venue" name="eventVenue">
-        </div>
-        <div>
-          <label for="price">Ticket Price (N):</label>
-          <input type="number" id="price" name="ticketPrice">
-        </div>
-        <div>
-          <label for="msg">Description<label>
-          <textarea id="msg" name="eventDescription"></textarea>
-        </div>
-        <div id="saveAndEdit" class="btn-group">
-        <button id="saveEvent" type="button" onclick="storeEvent()">Save Event</button>
-         <button type="reset">Reset Event</button>
-         </div>
-     </div>
-     </div>
-     
-     <div id="event-list"></div>
- </body>
+      </div>
+  </section>
+</body>
