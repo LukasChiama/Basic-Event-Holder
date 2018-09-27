@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang ="en">
+	<title>Event Manager</title>
+	<meta charset ="utf-8">
+</head>
+  <body>
+	  <section id="intro">
+        <h1>Romel<i>Events</i>.com</h1>
+	  </section>
+	  <section>
+        <p id="heading"><u>Upcoming Events</u></p>
+		</section>
+    <div>
+      <button id="add" onclick= "showDialog()">ADD NEW EVENT</button>
+    <div class="openform">
+        <div>
+          <label for="name">Event Name:</label>
+          <input type="text" id="name" name="eventName">
+        </div>
+        <div>
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" name="start_Date">
+        </div>
+        <div>
+          <label for="endDate">End Date:<label>
+          <input type="date" id="endDate" name="end_Date">
+        </div>
+        <div>
+          <label for="venue">Venue:</label>
+          <input type="text" id="venue" name="eventVenue">
+        </div>
+        <div>
+          <label for="price">Ticket Price (N):</label>
+          <input type="number" id="price" name="ticketPrice">
+        </div>
+        <div>
+          <label for="msg">Description<label>
+          <textarea id="msg" name="eventDescription"></textarea>
+        </div>
+        <div id="saveAndEdit" class="btn-group">
+        <button id="saveEvent" type="button" onclick="storeEvent()">Save Event</button>
+         <button type="reset">Reset Event</button>
+         </div>
+     </div>
+     </div>
+     
+     <div id="event-list"></div>
+ </body>
