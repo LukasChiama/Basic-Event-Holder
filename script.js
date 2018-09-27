@@ -1,4 +1,5 @@
 function showDialog() { 
+  localStorage.setItem("name", "Oliver");
   document.getElementsByClassName("openform")[0].style.display = "block";
 }
 
