@@ -1,6 +1,7 @@
 let counter = -1;
 
 function storeEvent() {
+
   counter += 1;
  
   const eventHolder = new Map();
@@ -14,6 +15,7 @@ function storeEvent() {
   const venue = document.getElementById("venue").value;
   const price = document.getElementById("price").value;
   const msg = document.getElementById("msg").value;
+
   
   currentEvent.set("Event Name", nameOf); 
   currentEvent.set("Venue", venue);
@@ -35,12 +37,11 @@ function storeEvent() {
   const listMum = document.createElement('ul')
   const listButton1 = document.createElement('BUTTON')
   const listButton2 = document.createElement('BUTTON')
-  //listButton2.setAttribute('id', counter)
   const buttonText1 = document.createTextNode('Edit Event')
   const buttonText2 = document.createTextNode('Delete Event')
 
     listMum.setAttribute('class', 'event-hold')
-    listMum.setAttribute('id', counter)
+    listMum.setAttribute('id', nameOf)
     listButton1.appendChild(buttonText1)
     listButton2.appendChild(buttonText2)
     listMum.classList.add('btn-group')
@@ -49,14 +50,18 @@ function storeEvent() {
     listButton2.onclick = deleteArr;
     
 
-    localStorage.setItem(counter, JSON.stringify(event));
-    const eventSafe = JSON.parse(localStorage.getItem(counter))
- 
+    localStorage.setItem(nameOf, JSON.stringify(Array.from(currentEvent.entries())));
+    const eventSafe = new Map(JSON.parse(localStorage.getItem(nameOf)));
+
+    // localStorage.setItem(counter, JSON.stringify(event));
+    // const eventSafe = JSON.parse(localStorage.getItem(counter));
+
     function renderEvent() {
-      eventSafe.forEach(function (key) {
+      eventSafe.forEach(function (value, key) {
+        //for (let [key, value] of eventSafe) {
         const li = document.createElement('li')
         li.setAttribute('class', 'list-item')
-        li.innerHTML = `${key}`
+        li.innerHTML = `${key}: ${value}`
         listMum.appendChild(li)
       });
         listMum.appendChild(listButton1)
@@ -65,32 +70,35 @@ function storeEvent() {
 
     renderEvent(eventSafe);
 
+    for (let i =0; i < 6; i++) {
+      document.getElementsByClassName('val')[i].value= ''; 
+    }
+
   function deleteArr() {
       let x = document.activeElement.parentNode.id;
       let y = document.getElementById(x);
       localStorage.removeItem(x);
       listArr.removeChild(y);
-      let itemsArr = [];
-      for(let i = 0; i < (counter + 3); i++) {
-        if (localStorage.getItem(i)) {
-          item = JSON.parse(localStorage.getItem(i));
-          itemsArr.push(item);
-          
-          // renderEvent(itemsArr);
-          //console.log(i);
-          }
-        }
-        /*while(listArr.hasChildNodes()) {
-          listArr.removeChild(listArr.lastChild)
-        }*/
-      //return renderEvent();
-      console.log(itemsArr);
+      // for (let i =0; i < 6; i++) {
+      //   document.getElementsByClassName('val')[i].value= ''; 
+      // }
     }
   function editArr() {
-      //listArr.removeChild(listArr.lastChild)
-      
-      currentEvent.set('edit', eventSafe);
-      console.log(localStorage.key(counter));
+      let a = document.activeElement.parentNode.id;
+      let b = document.getElementById(a);
+      let c = JSON.parse(localStorage.getItem(a));
+      console.log(c);
+      //listArr.removeChild(b);
+
+      // for (let i = 0; i < 6; i++) {
+      //   document.getElementsByClassName('val')[i].value = c[i];
+      // }
+      listArr.removeChild(b);
+      for (let i = 0; i < 6; i++) {
+      // i = 0;
+      // c.forEach(function () {
+        document.getElementsByClassName('val')[i].value = c[i][1];
+      };
   }
 
 }

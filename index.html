@@ -29,27 +29,27 @@
         <div class="openform">
           <div>
             <label for="name">Event Name:</label>
-            <input type="text" id="name" name="eventName">
+            <input type="text" id="name" class='val' name="eventName">
           </div>
           <div>
+              <label for="venue">Venue:</label>
+              <input type="text" id="venue" class='val' name="eventVenue">
+            </div>
+          <div>
             <label for="startDate">Start Date:</label>
-            <input type="date" id="startDate" name="start_Date">
+            <input type="date" id="startDate" class='val' name="start_Date">
           </div>
           <div>
             <label for="endDate">End Date:<label>
-            <input type="date" id="endDate" name="end_Date">
-          </div>
-          <div>
-            <label for="venue">Venue:</label>
-            <input type="text" id="venue" name="eventVenue">
+            <input type="date" id="endDate" class='val' name="end_Date">
           </div>
           <div>
             <label for="price">Ticket Price (N):</label>
-            <input type="number" id="price" name="ticketPrice">
+            <input type="number" id="price" class='val' name="ticketPrice">
           </div>
           <div>
             <label for="msg">Description<label>
-            <textarea id="msg" name="eventDescription"></textarea>
+            <textarea id="msg" class='val' name="eventDescription"></textarea>
           </div>
           <div id="saveAndEdit" class="btn-group">
             <button type="button" onclick="storeEvent()">Save Event</button>
