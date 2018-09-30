@@ -63,7 +63,6 @@ p {
   color: rgba(3, 12, 12, 0.918);
 }
 .menu {
-  height: 100%;
   width: 300px;
   left: 0px;
   padding: 10px;
@@ -87,7 +86,6 @@ p {
   padding: 1em;
   border: 2px;
   border-radius: 1em;
-  display: none;
   font-size: 20px;
   color:#8585f8;
   background-color: rgb(226, 223, 223);
@@ -127,24 +125,25 @@ button {
   width: 100px;
   color: #000080;
   cursor: pointer;
+  margin-top: 15px;
 }
 .btn-group button:hover {
   color: rgb(174, 177, 177);
 }
 .list-item {
   box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.2);
+  padding: 1em;
 }
 #output {
   padding: 20px;
   width: 400px;
-  height: 1000px;
   float: right;
   border: 2px solid silver;
   background-image: url(Events.jpg);
   z-index: -1;
 }
-#event-list {
-  background-color:rgba(108, 113, 121, 0.993);
-  z-index: 100;
-  color: #F0FFFF;
+.event-hold {
+  background-color:rgba(39, 40, 43, 0.993);
+  border: 20px;
+  color: #CCC;
 }
