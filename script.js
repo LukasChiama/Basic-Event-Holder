@@ -1,21 +1,10 @@
 function showUpcoming() {
+  if (localStorage.length == 0){
+    window.alert("Local Storage is empty!")
+  }
   for (let i = 0; i < localStorage.length; i++) {
-    let nameOf = localStorage.key(i);
-    let items = document.createElement('li')
-    items.setAttribute('id', nameOf);
-    items = JSON.parse(localStorage.getItem(localStorage.key(i)))
+    items = new Map(JSON.parse(localStorage.getItem(localStorage.key(i))))
     renderEvent(items);
-    // const lis = document.getElementById('output');
-    // const li = document.createElement('ul')
-    // lis.appendChild(li);
-    // li.setAttribute('class', 'event-hold')
-  
-    // items.forEach(function (key) {
-    //   const l = document.createElement('li');
-    //   l.setAttribute('class', 'list-item');
-    //   l.innerHTML = `${key}:`;
-    //   li.appendChild(l);
-    // })
     
 }
   
@@ -71,7 +60,7 @@ function renderEvent(arr) {
   const buttonText2 = document.createTextNode('Delete Event')
 
     listMum.setAttribute('class', 'event-hold')
-    listMum.setAttribute('id', nameOf)
+    listMum.setAttribute('id', arr.get("Event Name"))
     listButton1.appendChild(buttonText1)
     listButton2.appendChild(buttonText2)
     listMum.classList.add('btn-group')
@@ -114,4 +103,11 @@ function renderEvent(arr) {
       });
   }
 }
- // renderEvent(arr);
+
+function clearStorage() {
+  localStorage.clear();
+  const listArr2 = document.getElementById('output')
+  while (listArr2.hasChildNodes) {
+    listArr2.removeChild(listArr2.lastChild)
+  }
+}
