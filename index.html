@@ -21,15 +21,14 @@
       <p>YOUR DATABASE</p>
       <div class="grid-hold">
         <div class="menu">
-          <a id="add" onclick= "showDialog()">Add New Event</a>
-          <a id="saved">View Saved Events</a>
-          <a id="future">See Upcoming Events</a>
+          <a id="saved" onclick="showUpcoming()">Upcoming Events</a>
+          <a id="future" onclick="clearStorage()">Delete All Events</a>
           <a id="clients">Clients</a> 
         </div>
         <div class="openform">
           <div>
             <label for="name">Event Name:</label>
-            <input type="text" id="name" class='val' name="eventName">
+            <input type="text" id="name" class='val' name="eventName" required="required">
           </div>
           <div>
               <label for="venue">Venue:</label>
@@ -52,12 +51,11 @@
             <textarea id="msg" class='val' name="eventDescription"></textarea>
           </div>
           <div id="saveAndEdit" class="btn-group">
-            <button type="button" onclick="storeEvent()">Save Event</button>
-            <button type="reset">Reset Event</button>
+            <button type="button" onclick="checkName()">Save Event</button>
+            <button type="reset" onclick="resetEvent()">Reset</button>
           </div>
         </div>
         <div id="output">
-          <div id="event-list"></div>
         </div>
       </div>
   </section>

@@ -120,11 +120,9 @@ button {
   margin-left: 1em;
 }
 .btn-group button {
-  float: center;
   border-radius: 1em;
   width: 100px;
   color: #000080;
-  cursor: pointer;
   margin-top: 15px;
 }
 .btn-group button:hover {
@@ -140,7 +138,7 @@ button {
   float: right;
   border: 2px solid silver;
   background-image: url(Events.jpg);
-  z-index: -1;
+  /*z-index: -1;*/
 }
 .event-hold {
   background-color:rgba(39, 40, 43, 0.993);
