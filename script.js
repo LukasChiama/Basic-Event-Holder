@@ -1,6 +1,6 @@
 function showUpcoming() {
   if (localStorage.length == 0){
-    window.alert("Local Storage is empty!")
+    window.alert("You have no Upcoming Events!")
   }
   for (let i = 0; i < localStorage.length; i++) {
     items = new Map(JSON.parse(localStorage.getItem(localStorage.key(i))))
@@ -30,7 +30,7 @@ const msg = document.getElementById("msg").value;
   } else {
     return storeEvent();
   }
-
+   
   function storeEvent() {
 
     const eventHolder = new Map();

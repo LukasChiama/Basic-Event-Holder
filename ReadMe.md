@@ -1,1 +1,2 @@
-This program is a simple event management database. It allows for creating, saving, editing and deleting events from the database. Events created or updated are displayed immediately on the screen.
+This is a fully functional CRUD written in vanilla JavaScript only. No libraries are used.
+It is an event management database. It allows for creating, saving, editing and deleting events from the database. Events created or updated are displayed immediately on the screen.
